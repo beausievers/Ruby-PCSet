@@ -14,119 +14,119 @@ This software is licensed under a modified version of the MIT License which limi
 ----------------
 
 Make new PCSets:
-> myPCSet = PCSet.new([0,2,4,6,8,10])
+> my_pcset = PCSet.new([0,2,4,6,8,10])
 => [0, 2, 4, 6, 8, 10]
-> myPCSet2 = PCSet.new([1,5,9])
+> my_pcset2 = PCSet.new([1,5,9])
 => [1, 5, 9]
 
 Intersection of two PCSets:
-> myPCSet & myPCSet2
+> my_pcset & my_pcset2
 => [10]
 
 Union of two PCSets:
-> myPCSet | myPCSet2
+> my_pcset | my_pcset2
 => [0, 2, 4, 6, 8, 10, 1, 5, 9]
 
 Inversion:
-> myPCSet2.invert
+> my_pcset2.invert
 => [11, 7, 3, 2]
 
 Complement:
-> myPCSet.complement
+> my_pcset.complement
 => [1, 3, 5, 7, 9, 11]
 
 Inversion around an arbitrary axis:
-> myPCSet2.invert(3)
+> my_pcset2.invert(3)
 => [2, 10, 6, 5]
 
 Transposition:
-> myPCSet.transpose(-1)
+> my_pcset.transpose(-1)
 => [11, 1, 3, 5, 7, 9]
 
 Multiplication:
-> myPCSet2.multiply(5)
+> my_pcset2.multiply(5)
 => [5, 1, 9, 2]
 
 Transposing to zero:
-> myPCSet2.zero
+> my_pcset2.zero
 => [0, 4, 8, 9]
 
 Get all transpositions:
-> myPCSet2.transpositions
+> my_pcset2.transpositions
 => [[0, 4, 8, 9], [1, 5, 9, 10], [2, 6, 10, 11], [3, 7, 11, 0], [4, 8, 0, 1], [5, 9, 1, 2], [6, 10, 2, 3], [7, 11, 3, 4], [8, 0, 4, 5], [9, 1, 5, 6], [10, 2, 6, 7], [11, 3, 7, 8]]
 
 Get all transpositions and inversions:
-> myPCSet2.transpositionsAndInversions
+> my_pcset2.transpositions_and_inversions
 => [[0, 4, 8, 9], [1, 5, 9, 10], [2, 6, 10, 11], [3, 7, 11, 0], [4, 8, 0, 1], [5, 9, 1, 2], [6, 10, 2, 3], [7, 11, 3, 4], [8, 0, 4, 5], [9, 1, 5, 6], [10, 2, 6, 7], [11, 3, 7, 8], [0, 8, 4, 3], [1, 9, 5, 4], [2, 10, 6, 5], [3, 11, 7, 6], [4, 0, 8, 7], [5, 1, 9, 8], [6, 2, 10, 9], [7, 3, 11, 10], [8, 4, 0, 11], [9, 5, 1, 0], [10, 6, 2, 1], [11, 7, 3, 2]]
 
 Place a set in normal form:
-> myPCSet2.normalForm
+> my_pcset2.normal_form
 => [9, 10, 1, 5]
 
 Check if a set is in normal form:
-> myPCSet2.isNormalForm?
+> my_pcset2.is_normal_form?
 => false
-> myPCSet2.normalForm.isNormalForm?
+> my_pcset2.normal_form.is_normal_form?
 => true
 
 Get every member of the set class to which this set belongs:
-> myPCSet2.setClass
+> my_pcset2.set_class
 => [[0, 1, 4, 8], [0, 3, 4, 8], [1, 2, 5, 9], [1, 4, 5, 9], [2, 3, 6, 10], [2, 5, 6, 10], [3, 4, 7, 11], [3, 6, 7, 11], [4, 5, 8, 0], [4, 7, 8, 0], [5, 6, 9, 1], [5, 8, 9, 1], [6, 7, 10, 2], [6, 9, 10, 2], [7, 8, 11, 3], [7, 10, 11, 3], [8, 9, 0, 4], [8, 11, 0, 4], [9, 0, 1, 5], [9, 10, 1, 5], [10, 1, 2, 6], [10, 11, 2, 6], [11, 0, 3, 7], [11, 2, 3, 7]]
 
 Prime form:
-> myPCSet2.prime
+> my_pcset2.prime
 => [0, 1, 4, 8]
 
 Check if a set is prime:
-> myPCSet2.isPrime?
+> my_pcset2.is_prime?
 => false
-> myPCSet2.prime.isPrime?
+> my_pcset2.prime.is_prime?
 => true
 
 Get the interval vector of a set:
-> myPCSet2.intervalVector
+> my_pcset2.interval_vector
 => [1, 0, 1, 3, 1, 0]
 
 Get the full interval vector of a set:
-> myPCSet2.fullIntervalVector
+> my_pcset2.full_interval_vector
 => [1, 0, 0, 2, 1, 0, 0, 1, 1, 0, 0]
 
 Get Morris's invariance vector:
-> myPCSet.invarianceVector
+> my_pcset.invariance_vector
 => [6, 6, 6, 6, 6, 6, 6, 6]
 
 Huron's aggregate dyadic consonance measure:
-> myPCSet2.huron
+> my_pcset2.huron
 => [1.564, 0.343482463712422]
 
 Balzano's vector of relations:
-> myPCSet.vectorOfRelations
+> my_pcset.vector_of_relations
 => [[0, 2, 4, 6, 8, 10], [0, 2, 4, 6, 8, 10], [0, 2, 4, 6, 8, 10], [0, 2, 4, 6, 8, 10], [0, 2, 4, 6, 8, 10], [0, 2, 4, 6, 8, 10]]
 
 Check if the set satisfies Balzano's uniqueness:
-> myPCSet.isUnique?
+> my_pcset.is_unique?
 => false
-> myPCSet2.isUnique?
+> my_pcset2.is_unique?
 => true
 
 Check if the set satisfies Balzano's scalestep-semitone coherence:
-> myPCSet.isCoherent?
+> my_pcset.is_coherent?
 => true
-> myPCSet2.isCoherent?
+> my_pcset2.is_coherent?
 => false
 
 Check if the set satisfies Balzano's criterea for strict coherence:
-> myPCSet.isStrictlyCoherent?
+> my_pcset.is_strictly_coherent?
 => true
-> myPCSet2.isStrictlyCoherent?
+> my_pcset2.is_strictly_coherent?
 => false
 
 Gimmie some note names:
-> myPCSet.notes
+> my_pcset.notes
 => "C, D, E, F#, G#, A#"
 
 Gimmie all kinds of information all at once, in human-readable form:
-> myPCSet.info
+> my_pcset.info
 modulo: 12
 raw input: [0, 2, 4, 6, 8, 10]
 pitch set: [0, 2, 4, 6, 8, 10]
